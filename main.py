@@ -3,6 +3,10 @@ import os
 
 data={'Name': ["John", "Alice","Bob"], 'Age': [25, 30, 35], 'City': ["New York", "Los Angeles", "Chicago"]}
 df = pd.DataFrame(data)
+
+new_row = {'Name': "Eve", 'Age': 28, 'City': "San Francisco"}
+df.loc[len(df.index)] = new_row
+
 data_dir = "data"
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
